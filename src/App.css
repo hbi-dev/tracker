@@ -1,0 +1,339 @@
+/* Global Styles - Assurez-vous que body est stylisé dans index.css ou ici */
+/* body {
+  font-family: 'Inter', sans-serif; (si non défini dans index.css)
+  background-color: #f7f9fc;
+  margin: 0;
+  padding: 0;
+  color: #4A5568; /* Gris foncé pour le texte */
+/* } */
+
+/* App Container */
+.App {
+  max-width: 900px; /* Légèrement plus large */
+  margin: 40px auto; /* Plus de marge en haut/bas */
+  padding: 30px;
+  background: #ffffff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08); /* Ombre plus douce et diffuse */
+  border-radius: 12px; /* Coins plus arrondis */
+  text-align: left; /* Aligner le texte à gauche pour une meilleure lisibilité du contenu */
+}
+
+/* Headings */
+h1 {
+  color: #2D3748; /* Titre principal plus sobre */
+  font-size: 2.2rem; /* Taille ajustée */
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-align: center; /* Centrer le titre principal de l'application */
+}
+
+h2 {
+  color: #1A202C; /* Titres de section */
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-top: 40px; /* Plus d'espace avant les sections */
+  margin-bottom: 20px;
+  border-bottom: 1px solid #E2E8F0; /* Ligne de séparation subtile */
+  padding-bottom: 10px;
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 0.95rem;
+}
+
+table thead {
+  background-color: #edf2f7; /* Fond d'en-tête de tableau plus clair */
+  color: #4A5568; /* Texte d'en-tête plus foncé */
+  font-weight: 600; /* Texte d'en-tête en gras */
+}
+
+table th, table td {
+  border: 1px solid #e2e8f0; /* Bordures plus claires */
+  padding: 12px 15px; /* Plus de padding */
+  text-align: left;
+  vertical-align: middle; /* Aligner verticalement au centre */
+}
+
+table tbody tr {
+  transition: background-color 0.2s ease-in-out;
+}
+
+table tbody tr:nth-child(even) {
+  background-color: #fcfcfd; /* Alternance de fond très subtile */
+}
+
+table tbody tr:hover {
+  background-color: #f0f4f8; /* Survol plus clair */
+}
+
+/* Buttons */
+button,
+input[type="submit"] /* Appliquer le style aux boutons de soumission de formulaire */
+ {
+  background-color: #4A90E2; /* Un bleu moderne comme couleur primaire */
+  color: white;
+  border: none;
+  padding: 10px 20px; /* Padding ajusté */
+  border-radius: 6px; /* Coins légèrement arrondis */
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+button:hover,
+input[type="submit"]:hover {
+  background-color: #357ABD; /* Bleu plus foncé au survol */
+  transform: translateY(-1px); /* Léger effet de soulèvement */
+}
+
+button:active,
+input[type="submit"]:active {
+  background-color: #2A6BA3;
+  transform: translateY(0px);
+}
+
+/* Form Elements (AddCoinForm) */
+/* Ajoutez une classe au conteneur du formulaire dans AddCoinForm.js si nécessaire, ex: <form className="add-coin-form"> */
+form div { /* Style pour les divs qui encapsulent label + input */
+  margin-bottom: 20px; /* Espacement entre les champs */
+}
+
+form label {
+  display: block; /* Label sur sa propre ligne */
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #2D3748;
+  font-size: 0.9rem;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="email"], /* Au cas où vous en ajouteriez */
+form select { /* Si vous utilisez des selects */
+  width: 100%; /* Occuper toute la largeur disponible */
+  padding: 12px 15px;
+  border: 1px solid #CBD5E0; /* Bordure standard */
+  border-radius: 6px;
+  box-sizing: border-box; /* Important pour que padding ne modifie pas la largeur totale */
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+form input[type="text"]:focus,
+form input[type="number"]:focus,
+form input[type="email"]:focus,
+form select:focus {
+  outline: none;
+  border-color: #4A90E2; /* Couleur de la bordure au focus */
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2); /* Ombre de focus subtile */
+}
+
+/* Suggestions List in AddCoinForm */
+/* Vous pouvez envelopper la liste ul dans AddCoinForm.js avec une div pour mieux la cibler si nécessaire */
+/* Par exemple: <div className="suggestions-container"><ul>...</ul></div> */
+.suggestions-container ul { /* Si vous ajoutez la classe .suggestions-container */
+  list-style-type: none;
+  padding: 0;
+  margin: 5px 0 0 0; /* Marge au-dessus de la liste */
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  max-height: 200px; /* Limiter la hauteur et permettre le défilement */
+  overflow-y: auto;
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.suggestions-container li {
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  border-bottom: 1px solid #f7f9fc; /* Séparateur fin */
+}
+
+.suggestions-container li:last-child {
+  border-bottom: none;
+}
+
+.suggestions-container li:hover {
+  background-color: #f0f4f8;
+}
+
+/* Alert Section */
+.alert {
+  margin-top: 20px;
+  padding: 15px 20px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  display: flex; /* Pour aligner icône et texte si vous en ajoutez */
+  align-items: center;
+  border-left-width: 4px;
+  border-left-style: solid;
+}
+
+.alert p {
+  margin: 0;
+}
+
+/* Success (No Alert) state in Alerts.js */
+.alert.success { /* Vous devrez peut-être ajouter cette classe dans Alerts.js */
+  background-color: #E6FFFA; /* Fond vert pâle */
+  border-color: #38A169; /* Bordure verte */
+  color: #2F855A; /* Texte vert foncé */
+}
+
+/* Error state in Alerts.js */
+.alert.error { /* Vous devrez peut-être ajouter cette classe dans Alerts.js */
+  background-color: #FFF5F5; /* Fond rouge pâle */
+  border-color: #E53E3E; /* Bordure rouge */
+  color: #C53030; /* Texte rouge foncé */
+}
+
+/* Specific styling for triggered vs. safe alerts if still needed */
+/* Ces classes sont déjà dans votre App.css original, nous les mettons à jour */
+.alert-triggered { /* Utilisé si alert.alert est true */
+  background-color: #FFF5F5; /* Fond rouge/rose clair */
+  border-left: 4px solid #E53E3E; /* Bordure gauche rouge marquée */
+  color: #C53030; /* Texte rouge foncé */
+}
+
+.alert-safe { /* Utilisé si alert.alert est false */
+  background-color: #F0FFF4; /* Fond vert très clair */
+  border-left: 4px solid #38A169; /* Bordure gauche verte marquée */
+  color: #2F855A; /* Texte vert foncé */
+}
+
+/* Pour l'affichage de l'erreur générale dans Alerts.js */
+.alert p[style*="darkred"] { /* Cible le <p> avec style inline color: "darkred" */
+  font-weight: 500;
+}
+
+.alert p[style*="red"] { /* Cible le <p> avec style inline color: "red" */
+  font-weight: bold;
+}
+
+.alert p[style*="green"] { /* Cible le <p> avec style inline color: "green" */
+  color: #2F855A !important; /* Assurez-vous que cela prend le dessus si nécessaire */
+}
+
+/* Styles pour le nouveau système d'alertes compactes avec tooltip */
+
+/* Conteneur pour la zone de survol et le positionnement relatif du tooltip */
+.alert-hover-area {
+  position: relative; /* Nécessaire pour positionner le tooltip absolument par rapport à cet élément */
+  display: inline-flex; /* Ou 'flex' pour mieux centrer l'indicateur si besoin */
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Pour que la zone de survol occupe la cellule */
+  height: 100%; /* Pour que la zone de survol occupe la cellule */
+  min-height: 24px; /* Hauteur minimale pour l'interaction */
+}
+
+/* L'indicateur visuel (le point de couleur) */
+.alert-indicator {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%; /* Pour en faire un cercle */
+  transition: transform 0.2s ease-in-out;
+  /* Ombre subtile pour le faire ressortir un peu */
+  /* box-shadow: 0 1px 3px rgba(0,0,0,0.2); */
+}
+
+.alert-hover-area:hover .alert-indicator {
+  transform: scale(1.2); /* Grossit légèrement au survol de la zone */
+}
+
+/* Couleur pour l'indicateur neutre/placeholder (si vous l'utilisez) */
+.alert-indicator.placeholder {
+  background-color: #adb5bd; /* Gris neutre */
+  /* Ou un style avec un point d'interrogation, etc. */
+}
+
+/* Couleur pour l'indicateur "safe" (vert) */
+.alert-indicator.safe-indicator {
+  background-color: #28a745; /* Vert succès */
+}
+
+/* Couleur pour l'indicateur "triggered" (rouge/orange) */
+.alert-indicator.triggered-indicator {
+  background-color: #dc3545; /* Rouge alerte */
+}
+/* Vous pouvez utiliser une couleur orange si le rouge est trop fort pour "triggered" vs "error" */
+/* .alert-indicator.triggered-indicator {
+  background-color: #ffc107; /* Orange avertissement */
+/* } */
+
+
+/* Couleur pour l'indicateur "error" (rouge foncé / distinct) */
+.alert-indicator.error-indicator {
+  background-color: #b30000; /* Rouge erreur plus distinct */
+  /* Peut-être un style différent, comme un 'X' ou une bordure */
+}
+
+/* L'infobulle (tooltip) qui apparaît au survol */
+.alert-details-tooltip {
+  position: absolute;
+  bottom: 100%; /* Se positionne au-dessus de .alert-hover-area */
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px); /* Centré horizontalement et petit espace au-dessus */
+  min-width: 250px; /* Largeur minimale du tooltip */
+  background-color: #fff;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 100; /* S'assurer qu'il est au-dessus des autres éléments */
+  text-align: left;
+  opacity: 0; /* Initialement invisible */
+  visibility: hidden; /* Initialement caché */
+  transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+/* Afficher le tooltip lorsque isHovered est true (géré par React, mais on peut forcer via CSS pour la zone de survol) */
+.alert-hover-area:hover .alert-details-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(-5px); /* Petit effet de "pop" */
+}
+
+.alert-details-tooltip .tooltip-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1A202C;
+  margin-top: 0;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+.alert-details-tooltip .alert-detail-text {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 6px;
+}
+
+.alert-details-tooltip .alert-detail-text:last-child {
+  margin-bottom: 0;
+}
+
+.alert-details-tooltip .alert-detail-text strong {
+  color: #4A5568;
+}
+
+/* Style pour le résumé dans le tooltip */
+.alert-details-tooltip .alert-summary.safe {
+  color: #2F855A; /* Vert */
+  font-weight: bold;
+}
+
+.alert-details-tooltip .alert-summary.triggered {
+  color: #C53030; /* Rouge */
+  font-weight: bold;
+}
